@@ -13,10 +13,11 @@ escinefilo('sofia').
 escinefilo('pablo').
 
 gustateatro('lina').
+gustateatro('luis').
 
 esdeportista('juan').
 esdeportista('luis').
-esdeportista('sofia').
+esdeportista('lina').
 
 gustabailar('britany').
 gustabailar('pamela').
@@ -26,23 +27,29 @@ quierehijos('britany').
 quierehijos('pamela').
 quierehijos('luis').
 
+gustaviajar('juan').
+gustaviajar('luis').
+gustaviajar('britany').
+gustaviajar('sofia').
+
 esfumador('britany').
 esfumador('pamela').
 esfumador('pablo').
 esfumador('luis').
 
+esbebedor('lina').
+esbebedor('jesus').
 
-escompcine(A,B) :- escinefilo(A), escinefilo(B), A\==B.
-escompcinte(A,B) :- escinefilo(A), gustateatro(B), A\==B.
+escompatiblecinefilo(A,B) :- escinefilo(A), escinefilo(B), A\==B.
+escompatibledeportista(A,B) :- esdeportista(A), esdeportista(B), A\==B.
+escompatiblequierehijos(A,B) :- quierehijos(A), quierehijos(B), A\==B.
+escompatiblefumador(A,B) :- esfumador(A), esfumador(B), A\==B.
 
-escomdep(A,B) :- esdeportista(A), esdeportista(B), A\==B.
-escombail(A,B) :- gustabailar(A), gustabailar(B), A\==B.
-escomdepbai(A,B) :- esdeportista(A), gustabailar(B), A\==B.
+escompatibleCineTeatro(A,B) :- escinefilo(A), gustateatro(B), A\==B.
+escompatibleDeporteBailar(A,B) :- esdeportista(A), gustabailar(B), A\==B.
+escompatibleHijosViajar(A,B) :- quierehijos(A), gustaviajar(B), A\==B.
+escompatibleFumarBeber(A,B) :- esfumador(A), esbebedor(B), A\==B.
 
-escomhijo(A,B) :- quierehijos(A), quierehijos(B), A\==B.
-
-escomfum(A,B) :- esfumador(A), esfumador(B), A\==B.
-
-muycompatible(A,B) :- escompcine(A,B), escomdep(A,B), escomhijo(A,B), escomfum(A,B), A\==B.
-mediocompatible(A,B) :- escompcinte(A,B), escombail(A,B), escomdepbai(A,B), A\==B.
-pococompatible(A,B) :- escompcinte(A,B); escombail(A,B); escomdepbai(A,B), A\==B.
+muycompatible(A,B) :-
+mediocompatible(A,B) :-
+pococompatible(A,B) :-
