@@ -45,11 +45,14 @@ escompatibledeportista(A,B) :- esdeportista(A), esdeportista(B), A\==B.
 escompatiblequierehijos(A,B) :- quierehijos(A), quierehijos(B), A\==B.
 escompatiblefumador(A,B) :- esfumador(A), esfumador(B), A\==B.
 
+incompatibleCineBeber(A,B) :-
+incompatibleTeatroFumar(A,B) :-
+
 escompatibleCineTeatro(A,B) :- escinefilo(A), gustateatro(B), A\==B.
 escompatibleDeporteBailar(A,B) :- esdeportista(A), gustabailar(B), A\==B.
 escompatibleHijosViajar(A,B) :- quierehijos(A), gustaviajar(B), A\==B.
 escompatibleFumarBeber(A,B) :- esfumador(A), esbebedor(B), A\==B.
 
-muycompatible(A,B) :-
-mediocompatible(A,B) :-
+muycompatible(A,B) :- 
+compatible(A,B) :-
 pococompatible(A,B) :-
