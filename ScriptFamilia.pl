@@ -79,10 +79,10 @@ familiarde(A,B) :-padrede(A,B).
 familiarde(A,B) :-abuelode(A,B).
 familiarde(A,B) :-hermanode(A,B).
 familiarde(A,B) :-nietode(A,B).
+familiarde(A,B) :-esposode(A,B).
+familiarde(A,B) :-primode(A,B).
 familiarde(A,B) :-tiode(A,B).
 familiarde(A,B) :-sobrinode(A,B).
 familiarde(A,B) :-bisabuelode(A,B).
 familiarde(A,B) :-bisnietode(A,B).
 familiarde(A,B) :-hijode(A,B).
-familiarde(A,B) :-esposode(A,B).
-familiarde(A,B) :-primode(A,B).
