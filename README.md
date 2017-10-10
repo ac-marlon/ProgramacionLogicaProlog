@@ -4,6 +4,7 @@
 **Lista de Ejercicios propuestos:**
 
 1. Arbol genealógico de la familia con relaciones sanguineas
+2. Aplicacion para deducir compatibilidad entre personas
 
 **Integrantes:**
 
