@@ -56,8 +56,5 @@ escompatibleHijosViajar(A,B) :- quierehijos(A), gustaviajar(B), A\==B.
 escompatibleFumarBeber(A,B) :- esfumador(A), esbebedor(B), A\==B.
 
 muycompatible(A,B) :- escompatibleCineTeatro(A,B); escompatibleDeporteBailar(A,B); escompatibleHijosViajar(A,B); escompatibleFumarBeber(A,B), A\==B.
-
 compatible(A,B) :- escompatiblecinefilo(A,B); escompatibledeportista(A,B); escompatiblequierehijos(A,B); escompatiblefumador(A,B), A\==B.
-
 incompatible(A,B) :- incompatibleCineBeber(A,B), incompatibleTeatroFumar(A,B), incompatibleHijosBailar(A,B), incompatibleDeportistaFumar(A,B), A\==B.
-
