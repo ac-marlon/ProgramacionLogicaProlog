@@ -86,10 +86,39 @@ categoria('Carlos','Asistente').
 categoria('Tatiana','Titular').
 categoria('Jorge','Asistente').
 
+numeroEmpleado('Yolanda',1).
+numeroEmpleado('Miguel',2).
+numeroEmpleado('Joaquin',3).
+numeroEmpleado('Alejandro',4).
+numeroEmpleado('Pedro',5).
+numeroEmpleado('Juliana',6).
+numeroEmpleado('Laura',7).
+numeroEmpleado('Ismael',8).
+numeroEmpleado('David',9).
+numeroEmpleado('Liliana',10).
+numeroEmpleado('Jose',11).
+numeroEmpleado('Wilson',12).
+numeroEmpleado('Isabel',13).
+numeroEmpleado('Adriana',14).
+numeroEmpleado('Lucia',15).
+numeroEmpleado('Cristian',16).
+numeroEmpleado('Osvaldo',17).
+numeroEmpleado('Sofia',18).
+numeroEmpleado('Andrea',19).
+numeroEmpleado('Diana',20).
+numeroEmpleado('Martin',21).
+numeroEmpleado('Viviana',22).
+numeroEmpleado('Carlos',23).
+numeroEmpleado('Tatiana',24).
+numeroEmpleado('Jorge',25).
+
 %Tipo y semanas del semestre
 tipoSemestre('Normal',18).
 tipoSemestre('Intersemestral',4).
 
 %Calculo de la nomina individual en un semestre especifico
-nominaEmpleado(A,K,B):-vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F),tipoSemestre(K,S),B is integer(((D*E*S)*(1+(F/100)))).
+nominaEmpleado(A,K,B):-vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F),tipoSemestre(K,S),B is round(((D*E*S)*(1+(F/100)))).
+
+%Calculo de la nomina general en un semestre especifico
+
 
