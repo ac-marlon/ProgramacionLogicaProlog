@@ -54,11 +54,11 @@ valorHoraCategoria('MTO','Titular',7900).
 valorHoraCategoria('PLANTA','Asistente',13600).
 valorHoraCategoria('PLANTA','Titular',14000).
 
-liquidacionBonoMensual('TCO',0.15).
-liquidacionBonoMensual('MTO',0.12).
-liquidacionBonoMensual('HC',0.10).
-liquidacionBonoMensual('HCH',0.01).
-liquidacionBonoMensual('PLANTA',0.25).
+liquidacionBonoMensual('TCO',15).
+liquidacionBonoMensual('MTO',12).
+liquidacionBonoMensual('HC',10).
+liquidacionBonoMensual('HCH',5).
+liquidacionBonoMensual('PLANTA',25).
 
 categoria('Yolanda','Asistente').
 categoria('Miguel','Titular').
@@ -91,4 +91,5 @@ tipoSemestre('Normal',18).
 tipoSemestre('Intersemestral',4).
 
 %Calculo de la nomina individual en un semestre especifico
-nominaEmpleado(A,S,B):-vinculacion(A,C),horasVinculacion(C,D),valorHoraCategoria(C,D,E),liquidacionBonoMensual(C,F),tipoSemestre(_,S),B is ((D*E*S)*(1+F)).
+nominaEmpleado(A,K,B):-vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F),tipoSemestre(K,S),B is integer(((D*E*S)*(1+(F/100)))).
+
