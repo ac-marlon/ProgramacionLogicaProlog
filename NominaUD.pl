@@ -119,6 +119,9 @@ tipoSemestre('Intersemestral',4).
 %Calculo de la nomina individual en un semestre especifico
 nominaEmpleado(A,K,B):-vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F),tipoSemestre(K,S),B is round(((D*E*S)*(1+(F/100)))).
 
-%Calculo de la nomina general en un semestre especifico
+sumar([ X | Y ],R) :- sumar(Y, R1), R is R1+X.
 
+%Calculo de la nomina general en un semestre especifico
+nominaNormal(Total) :- findall(B, (vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F), B is round(((D*E*18)*(1+(F/100))))), Lista),                      sumar(Lista,Total).
+nominaInter(Lista) :- findall(B, (vinculacion(A,C),horasVinculacion(C,D),categoria(A,P),valorHoraCategoria(C,P,E),liquidacionBonoMensual(C,F), B is round(((D*E*4)*(1+(F/100))))), Lista).
 
